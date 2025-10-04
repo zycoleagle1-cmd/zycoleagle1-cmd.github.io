@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Girlfriend’s Day 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      overflow: hidden;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: glow 2s infinite alternate;
+      z-index: 10;
+      position: relative;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff, 0 0 20px #ff79c6; }
+      to   { text-shadow: 0 0 20px #ff4da6, 0 0 40px #ff85b4; }
+    }
+
+    /* BIG drawn heart */
+    .drawn-heart {
+      width: 70vw;
+      max-width: 700px;
+      margin: 10px auto;
+      z-index: 10;
+      position: relative;
+    }
+    .drawn-heart path {
+      fill: none;
+      stroke: #ff1e90;
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 4000;
+      stroke-dashoffset: 4000;
+      animation: drawHeart 5s ease forwards;
+      filter: drop-shadow(0 0 15px #ff4da6);
+    }
+    @keyframes drawHeart {
+      to { stroke-dashoffset: 0; }
+    }
+
+    /* Floating hearts in background */
+    .heart {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatUp 8s linear infinite;
+      opacity: 0.8;
+      z-index: 1;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before { top: -20px; left: 0; }
+    .heart::after  { left: -20px; top: 0; }
+    @keyframes floatUp {
+      0%   { transform: translateY(0) rotate(45deg) scale(0.8); opacity: 0; }
+      30%  { opacity: 1; }
+      100% { transform: translateY(-900px) rotate(45deg) scale(1.6); opacity: 0; }
+    }
+
+    /* Moving gallery items */
+    .media img, .media video {
+      width: 200px;
+      max-width: 25vw;
+      border: 5px solid #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.6);
+      position: absolute;
+    }
+
+    /* Button */
+    .btn {
+      margin-top: 20px;
+      background: #ff4da6;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1.3rem;
+      border-radius: 40px;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(255,77,166,0.6);
+      z-index: 10;
+      position: relative;
+    }
+    .btn:hover {
+      background: #ff1e90;
+      transform: scale(1.1);
+    }
+
+    /* Fireworks overlay */
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Girlfriend’s Day 💕</h1>
+
+  <!-- BIG Animated drawn heart -->
+  <svg class="drawn-heart" viewBox="0 0 512 512">
+    <path d="M471.7 73.9c-54.5-46.4-136-38.9-186.4 13.7L256 117.8l-29.3-30.2c-50.4-52.6-131.9-60.1-186.4-13.7C-16.2 113.2-13.8 210 43 266.7l192.1 199.8c12 12.4 28.2 19.5 45.2 19.5s33.2-7.1 45.2-19.5L469 266.7c56.8-56.7 59.2-153.5 2.7-192.8z"/>
+  </svg>
+
+  <!-- Moving photo gallery -->
+  <div class="media">
+    <img src="aw.jpg" alt="Love 1" class="float">
+    <img src="aw2.jpg" alt="Love 2" class="float">
+    <img src="aw4.jpg" alt="Love 3" class="float">
+    <img src="aw5.jpg" alt="Love 4" class="float">
+    <img src="aw6.jpg" alt="Love 4" class="float">
+    <img src="aw7.jpg" alt="Love 4" class="float">
+    <img src="aw8.jpg" alt="Love 4" class="float">
+    <img src="aw9.jpg" alt="Love 4" class="float">
+    <img src="aw10.jpg" alt="Love 4" class="float">
+    <video src="v2.mp4" autoplay muted loop class="float"></video>
+    <video src="v3.mp4" autoplay muted loop class="float"></video>
+    <video src="v4.mp4" autoplay muted loop class="float"></video>
+    <video src="v5.mp4" autoplay muted loop class="float"></video>
+    <video src="v6.mp4" autoplay muted loop class="float"></video>
+    <video src="vid.mp4" autoplay muted loop class="float"></video>
+    <video src="vid.mp4" autoplay muted loop class="float"></video>
+    <video src="vid.mp4" autoplay muted loop class="float"></video>
+    <video src="vid.mp4" autoplay muted loop class="float"></video>
+    <video src="v2.mp4" autoplay muted loop class="float"></video>
+    <video src="vid.mp4" autoplay muted loop class="float"></video>
+    <video src="v3.mp4" autoplay muted loop class="float"></video>
+    <video src="v2.mp4" autoplay muted loop class="float"></video>
+    <video src="v3.mp4" autoplay muted loop class="float"></video>
+    <video src="v5.mp4" autoplay muted loop class="float"></video>
+    <video src="v3.mp4" autoplay muted loop class="float"></video>
+  </div>
+
+  <button class="btn" onclick="showFireworks()">Learn More 🎆</button>
+
+  <!-- Floating hearts -->
+  <div class="heart" style="left:10%; animation-delay:0s;"></div>
+  <div class="heart" style="left:25%; animation-delay:1s;"></div>
+  <div class="heart" style="left:40%; animation-delay:2s;"></div>
+  <div class="heart" style="left:55%; animation-delay:3s;"></div>
+  <div class="heart" style="left:70%; animation-delay:4s;"></div>
+  <div class="heart" style="left:85%; animation-delay:2.5s;"></div>
+
+  <canvas id="fireworks"></canvas>
+
+  <script>
+    /* --- Fireworks --- */
+    const canvas = document.getElementById('fireworks');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let fireworks = [];
+    class Firework {
+      constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        this.radius = Math.random() * 2 + 2;
+        this.speedX = (Math.random() - 0.5) * 6;
+        this.speedY = (Math.random() - 0.5) * 6;
+        this.alpha = 1;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.alpha -= 0.02;
+      }
+      draw() {
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+    function showFireworks() {
+      let colors = ["#ff4da6","#ff85b4","#ffd700","#ffffff"];
+      for (let i=0; i<120; i++) {
+        fireworks.push(new Firework(window.innerWidth/2, window.innerHeight/2, colors[Math.floor(Math.random()*colors.length)]));
+      }
+      setTimeout(() => {
+        window.location.href = "page2.html";
+      }, 3000);
+    }
+    function animateFireworks() {
+      requestAnimationFrame(animateFireworks);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      fireworks.forEach((f, i) => {
+        f.update();
+        f.draw();
+        if (f.alpha <= 0) fireworks.splice(i, 1);
+      });
+    }
+    animateFireworks();
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    /* --- Floating moving pictures --- */
+    const floats = document.querySelectorAll('.float');
+    const floatObjects = [];
+
+    floats.forEach(el => {
+      let rect = el.getBoundingClientRect();
+      floatObjects.push({
+        el: el,
+        x: Math.random() * (window.innerWidth - rect.width),
+        y: Math.random() * (window.innerHeight - rect.height),
+        dx: (Math.random() - 0.5) * 6, // 2x faster
+        dy: (Math.random() - 0.5) * 6,
+        w: rect.width,
+        h: rect.height
+      });
+    });
+
+    function moveFloats() {
+      floatObjects.forEach(obj => {
+        obj.x += obj.dx;
+        obj.y += obj.dy;
+
+        if (obj.x <= 0 || obj.x + obj.w >= window.innerWidth) obj.dx *= -1;
+        if (obj.y <= 0 || obj.y + obj.h >= window.innerHeight) obj.dy *= -1;
+
+        obj.el.style.left = obj.x + 'px';
+        obj.el.style.top = obj.y + 'px';
+      });
+      requestAnimationFrame(moveFloats);
+    }
+    moveFloats();
+  </script>
+</body>
+</html>
